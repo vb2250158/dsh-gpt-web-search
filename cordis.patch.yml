@@ -1,0 +1,5 @@
+- insert:
+    - id: gpt-web-search
+      name: dsh-gpt-web-search
+      config:
+        model: gpt-5.6-sol

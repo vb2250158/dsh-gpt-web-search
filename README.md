@@ -16,6 +16,8 @@ pnpm dsh plugin --profile web add github:vb2250158/dsh-gpt-web-search#<commit>
 
 插件配置保存在 DSH profile 的 `cordis.patch.yml`。多电脑同步仓库只保存仓库地址、固定提交、启停状态和配置，不保存本仓库源码。
 
+订阅登录来自本机 Subscriptions 登录存储。支持旧版单账户、版本 2 账户列表和多账户存储；选择启用的默认账户，默认账户不可用时按账户顺序选择。登录凭据不保存在插件仓库中。
+
 ## 验证
 
 ```powershell

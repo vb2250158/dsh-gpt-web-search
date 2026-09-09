@@ -79,3 +79,26 @@ test('GPT search provider rejects responses without native search completion', a
     { accessToken: 'token', accountId: 'account' },
   ), /no completed native web search call/)
 })
+
+for (const format of ['legacy', 'version2', 'multi']) {
+  test(`search reads the enabled preferred account from ${format} storage`, async () => {
+    const { mkdtemp, writeFile, rm } = await import('node:fs/promises')
+    const { tmpdir } = await import('node:os')
+    const { join } = await import('node:path')
+    const dir = await mkdtemp(join(tmpdir(), 'dsh-gpt-auth-'))
+    const session = { accessToken: 'test-enabled', accountId: 'test-account' }
+    const disabled = { accessToken: 'test-disabled', accountId: 'disabled' }
+    const data = format === 'legacy' ? { codex: session }
+      : format === 'version2' ? { schemaVersion: 2, providers: { codex: { order: ['off', 'on'], accounts: { off: { enabled: false, session: disabled }, on: { enabled: true, session } } } } }
+      : { codex: { default: 'off', order: ['off', 'on'], disabled: ['off'], accounts: { off: disabled, on: session } } }
+    try {
+      const path = join(dir, 'auth.json')
+      await writeFile(path, JSON.stringify(data))
+      const instance = new GptSubscriptionSearchProvider({ authStorePath: path })
+      instance.searchWithSession = async (_request, selected) => selected
+      assert.deepEqual(await instance.search({ query: 'fixture' }), session)
+    } finally {
+      await rm(dir, { recursive: true, force: true })
+    }
+  })
+}

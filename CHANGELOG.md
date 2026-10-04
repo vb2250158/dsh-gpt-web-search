@@ -1,5 +1,9 @@
 # 0.1.1
 
+## 0.1.3
+
+- Align maintenance lockfiles and peer versions with the DSH 0.2 runtime.
+
 ## 0.1.2
 
 - Update DSH compatibility requirements and interfaces for 0.2.1-alpha.1.

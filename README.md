@@ -1,5 +1,7 @@
 # dsh-gpt-web-search
 
+This release requires DSH 0.2.1-alpha.1 or a compatible 0.2 release. See [compatibility details](docs/dsh-0.2-compatibility.md).
+
 让稳定的 web_search 工具改由 GPT 订阅模型执行联网检索。
 
 ## 安装

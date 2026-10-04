@@ -1,6 +1,6 @@
 {
   "name": "dsh-gpt-web-search",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "type": "module",
   "main": "lib/index.js",
   "exports": {
@@ -12,16 +12,16 @@
     "cordis.patch.yml",
     "README.md",
     "LICENSE",
-    "tests"
+    "tests",
+    "docs"
   ],
   "dependencies": {
-    "@deepseek-ai/dsh-home-paths": "0.1.0-rc.8",
-    "@deepseek-ai/schemastery": "3.18.1"
+    "@deepseek-ai/dsh-home-paths": "0.2.1-alpha.1"
   },
   "peerDependencies": {
-    "@deepseek-ai/dsh-home-paths": ">=0.1.0-rc.7",
-    "@deepseek-ai/dsh-settings": ">=0.1.0-rc.7",
-    "@deepseek-ai/schemastery": ">=3.18.1"
+    "@deepseek-ai/dsh-home-paths": ">=0.2.1-alpha.1 <0.3.0",
+    "@deepseek-ai/dsh-settings": ">=0.2.1-alpha.1 <0.3.0",
+    "@deepseek-ai/schemastery": "3.18.1"
   },
   "license": "MIT",
   "repository": {

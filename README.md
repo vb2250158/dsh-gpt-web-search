@@ -30,3 +30,7 @@ npm pack --dry-run
 ## 许可证
 
 MIT
+
+## Plugin display metadata
+
+The plugin list shows **GPT web search** in English and **GPT 联网搜索** in Chinese, following the DSH interface language. `locale/en.json` and `locale/zh.json` provide the title and description; `icon.svg` supplies self-contained artwork. The package exports and publishes these resources. The icon is adapted from Lucide; see [ICON_LICENSE.txt](ICON_LICENSE.txt).
